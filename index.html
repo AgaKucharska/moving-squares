@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="pl">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>displacement of the squares</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+
+
+        button {
+            font-family: sans-serif;
+            background-color: white;
+            width: 120px;
+            padding: 15px;
+            text-align: center;
+            position: absolute;
+            left: calc(100vh - 58px);
+            border: 2px solid black;
+            z-index: 1;
+        }
+
+        div {
+            position: fixed;
+            width: 10px;
+            height: 10px;
+            transition: left 1s ease-in 0s, top 1s ease-out .7s, height 1s ease .5s, width 1s ease .5s, background-color 1.7s ease .3s;
+        }
+
+        div.one {
+            top: 0;
+            left: 0;
+            background-color: cornflowerblue;
+        }
+
+        div.two {
+            top: calc(25vh + 15px);
+            left: 0;
+            background-color: deeppink;
+        }
+
+        div.three {
+            top: calc(50vh + 25px);
+            left: 0;
+            background-color: palegreen;
+        }
+
+        div.four {
+            top: calc(100vh - 10px);
+            left: 0;
+            background-color: turquoise;
+        }
+
+
+        button:hover {
+            background-color: black;
+            color: white;
+        }
+
+        button:hover~div {
+            width: 90px;
+            height: 90px;
+        }
+
+        button:hover~div.one {
+            background-color: yellowgreen;
+            left: calc(100vw - 90px);
+            top: calc(100vh - 90px);
+        }
+
+        button:hover~div.two {
+            background-color: orange;
+            left: calc(100vw - 180px);
+            top: calc(100vh - 90px);
+        }
+
+        button:hover~div.three {
+            background-color: orchid;
+            left: calc(100vw - 90px);
+            top: calc(100vh - 180px);
+        }
+
+        button:hover~div.four {
+            background-color: purple;
+            left: calc(100vw - 180px);
+            top: calc(100vh - 180px);
+        }
+    </style>
+</head>
+
+<body>
+    <button>Let's go!</button>
+    <div class="one"></div>
+    <div class="two"></div>
+    <div class="three"></div>
+    <div class="four"></div>
+
+</body>
+
+</html>
